@@ -14,6 +14,7 @@ function Header(){
                         </a>
                     </div>
                     ${nav.outerHTML}
+                    <a href="#cart" class="header__cart-link"><img class="header__cart-img" src="../img/cart.png"> cart</a>
                 </div>
             </div>`
 

@@ -1,22 +1,48 @@
-import {title} from './Head.js'
-import header from './Header.js'
-import main from './Main.js'
-import footer from './Footer.js'
-
 function App (){
+    this.app
     this.init = () => {        
-        title.innerHTML = 'Hello SPA'
         this.create()
+        this.getData()
     }
     this.create = () => {
-        const app = document.createElement('div')
-        app.classList.add('app')
-        app.appendChild(header)
-        app.appendChild(main)
-        app.appendChild(footer)
-        document.body.appendChild(app);
+        this.app = document.createElement('div')
+        this.app.classList.add('app')
+        document.body.appendChild(this.app);
     }
-}
+    this.getData = async () => {
+        const response = await fetch('../data/data.js')
+        const data = await response.text()
+
+        setTimeout(()=>{
+            localStorage.setItem('data', data)
+            this.getComponentData()
+        }, 0)
+    }
+    this.getComponentData = async () => {
+        const headerData = await import('./Header.js')
+        this.app.appendChild(headerData.default)
+        const mainData = await import('./Main.js')
+        this.app.appendChild(mainData.default)
+        const footerData = await import('./Footer.js')
+        this.app.appendChild(footerData.default)
+    }
+    this.render = () => {
+        
+        // import('./Header.js')
+        //     .then((headerData)=> {
+        //         this.app.appendChild(headerData.default)
+        //         import('./Main.js')
+        //             .then((mainData)=>{
+        //                 this.app.appendChild(mainData.default)
+        //                 import('./Footer.js')
+        //                     .then((footerData)=>{
+        //                         this.app.appendChild(footerData.default)
+        //                     })
+        //             })
+        //     })
+        }
+
+    }
 
 const app = new App().init()
 

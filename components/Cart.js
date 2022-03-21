@@ -11,10 +11,11 @@ function Cart () {
                           </div>`
       } else {
           let list="";
-          cartData.forEach(({title, price, count, image}) => {
+          cartData.forEach(({title, price, count, image, id}) => {
               list += `
                 <div class="cart__item-wrap">
-                    <p>${title}</p> <img class="cart__img" src="${image}"> quantity: ${count} price ${price*count}
+                    <p>${title}</p> <img class="cart__img" src="${image}"> quantity: ${count} price ${price*count} 
+                    <button id="${id}" class="cart__btn-delete">Удалить</button>
                 </div>
               `
               cart.innerHTML = `<div class="container">

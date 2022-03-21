@@ -10,7 +10,7 @@ function Footer(){
                 <div class="wrapper">
                     <div class="footer__logo">
                         <a href="/">
-                            <img src="https://via.placeholder.com/100x50">
+                        <img src="../img/logo.png" class="nav__logo">
                         </a>
                     </div>
                     ${footerNav.outerHTML}

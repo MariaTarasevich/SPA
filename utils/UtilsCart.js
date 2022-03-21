@@ -27,10 +27,32 @@ function UtilsCart () {
       localStorage.setItem('cart', JSON.stringify(this.cart))
   }
 
+  this.addEventDelBtn = () => {
+    const delFromCartBtn = document.querySelectorAll('.cart__btn-delete')
+    delFromCartBtn.forEach(delBtn => {
+        delBtn.addEventListener('click', (e)=>{
+            console.log('aaaaaaaaaaaaaaaa')
+            this.delToCart(e.target.id)
+            
+        })
+    })
+  }
+
+  this.delToCart = (idProduct) => {
+    const productFromCart = this.dataLocalStorageCatalog.find(({id}) => id == idProduct)
+
+    this.cart.splice(this.cart.indexOf(productFromCart),1);
+    localStorage.setItem('cart', JSON.stringify(this.cart))
+}
+
+
+    
+
   this.init = ()=>{
       this.addEventAddBtn()
+      this.addEventDelBtn()
   }
 }
 
-const utilsCart = new UtilsCart().init()
+const utilsCart = new UtilsCart()
 export default utilsCart

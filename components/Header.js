@@ -9,8 +9,8 @@ function Header(){
             <div class="container">
                 <div class="wrapper">
                     <div class="header__logo">
-                        <a href="/">
-                            <img src="https://via.placeholder.com/100x50">
+                        <a href="/#home">
+                            <img src="../img/logo.png" class="nav__logo">
                         </a>
                     </div>
                     ${nav.outerHTML}

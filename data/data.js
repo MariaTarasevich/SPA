@@ -9,7 +9,7 @@
     {
         "id": "2",
         "slug": "catalog",
-        "title": "Catalog",
+        "title": "Каталог",
         "menuTitle": "Catalog",
         "content": ""
     },

@@ -260,7 +260,7 @@
     height: 350px;
     justify-content: space-between;
 }
-.about__partners-title, .about__wrap h1, .about__wrap p, .contacts__wrap h1,.contacts__info-wrap p,  .contacts__info-wrap h3{
+.container h1, .about__partners-title, .about__wrap h1, .about__wrap p, .contacts__wrap h1,.contacts__info-wrap p,  .contacts__info-wrap h3{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -270,4 +270,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+}
+
+.main{
+    min-height: 70vh;
 }
